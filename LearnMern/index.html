@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="form-section">
+        <h2 class="sr-only">HTML Forms, Validation, Semantic HTML aur Accessibility — Hinglish Guide</h2>
+
+        <div style="padding: 1.5rem 0 0;">
+
+            <!-- FORMS & INPUTS -->
+            <div class="section">
+                <div class="topic-header">
+                    <div class="topic-icon" style="background:#E6F1FB;"><i class="ti ti-forms"
+                            style="font-size:16px;color:#185FA5;" aria-hidden="true"></i></div>
+                    <h2 class="section-title">1. Forms and Inputs</h2>
+                    <span class="tag tag-blue">HTML</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">
+                        Definition</p>
+                    <p class="def">A <strong>form</strong> is an HTML element that collects user input and sends it to a
+                        server.</p>
+                    <p class="hindi">Form ek tarah ka container hota hai jisme user apna data bharta hai — jaise login
+                        page pe email aur password dalna. <span class="code-pill">&lt;form&gt;</span> tag se banate
+                        hain, aur usme <span class="code-pill">&lt;input&gt;</span>, <span
+                            class="code-pill">&lt;textarea&gt;</span>, <span class="code-pill">&lt;select&gt;</span>
+                        jaisi cheezein hoti hain.</p>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 6px;color:var(--color-text-secondary);">Common
+                        Input Types</p>
+                    <div>
+                        <span class="tag tag-blue">text</span>
+                        <span class="tag tag-blue">email</span>
+                        <span class="tag tag-blue">password</span>
+                        <span class="tag tag-blue">number</span>
+                        <span class="tag tag-blue">checkbox</span>
+                        <span class="tag tag-blue">radio</span>
+                        <span class="tag tag-blue">file</span>
+                        <span class="tag tag-blue">submit</span>
+                        <span class="tag tag-blue">date</span>
+                        <span class="tag tag-blue">range</span>
+                    </div>
+                    <p class="hindi" style="margin-top:8px;">Har input ka ek <span class="code-pill">type</span> hota
+                        hai — jaise email ke liye <span class="code-pill">type="email"</span> likhte hain, toh browser
+                        automatically thoda validation bhi karta hai.</p>
+                </div>
+
+                <div class="link-row">
+                    <a class="link-btn" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> MDN — &lt;form&gt;
+                        Element</a>
+                    <a class="link-btn" href="https://www.w3schools.com/html/html_forms.asp" target="_blank"><i
+                            class="ti ti-external-link" aria-hidden="true"></i> W3Schools — HTML Forms</a>
+                    <a class="link-btn" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> MDN — Input Types</a>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- VALIDATION -->
+            <div class="section">
+                <div class="topic-header">
+                    <div class="topic-icon" style="background:#EAF3DE;"><i class="ti ti-shield-check"
+                            style="font-size:16px;color:#3B6D11;" aria-hidden="true"></i></div>
+                    <h2 class="section-title">2. Validation Basics</h2>
+                    <span class="tag tag-teal">Client-side</span>
+                    <span class="tag tag-amber">Server-side</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">
+                        Definition</p>
+                    <p class="def"><strong>Validation</strong> is the process of checking that user input meets required
+                        rules before processing it.</p>
+                    <p class="hindi">Validation matlab — user ne jo data bhara hai, woh sahi hai ya nahi, ye check
+                        karna. Jaise koi email field pe sirf "abc" likhde, toh browser ko batana padta hai ki "bhai,
+                        sahi email likho!"</p>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-secondary);">Do types
+                        hote hain</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                        <div
+                            style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;">
+                            <span class="tag tag-teal"
+                                style="margin-bottom:6px;display:inline-block;">Client-side</span>
+                            <p style="font-size:13px;margin:0;color:var(--color-text-primary);">Browser mein hota hai —
+                                user ko turant error dikhta hai. HTML attributes jaise <span
+                                    class="code-pill">required</span>, <span class="code-pill">minlength</span>, <span
+                                    class="code-pill">pattern</span> use hote hain.</p>
+                        </div>
+                        <div
+                            style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;">
+                            <span class="tag tag-amber"
+                                style="margin-bottom:6px;display:inline-block;">Server-side</span>
+                            <p style="font-size:13px;margin:0;color:var(--color-text-primary);">Data server pe jaane ke
+                                baad check hota hai. Yeh zyada secure hoti hai — sirf client-side pe depend nahi karna
+                                chahiye.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="link-row">
+                    <a class="link-btn" href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> MDN — Form Validation</a>
+                    <a class="link-btn" href="https://www.w3schools.com/html/html_form_attributes.asp"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> W3Schools — Form
+                        Attributes</a>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- SEMANTIC HTML -->
+            <div class="section">
+                <div class="topic-header">
+                    <div class="topic-icon" style="background:#EEEDFE;"><i class="ti ti-code"
+                            style="font-size:16px;color:#534AB7;" aria-hidden="true"></i></div>
+                    <h2 class="section-title">3. Semantic HTML</h2>
+                    <span class="tag tag-purple">Meaning</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">
+                        Definition</p>
+                    <p class="def"><strong>Semantic HTML</strong> uses elements that describe their meaning to both the
+                        browser and the developer.</p>
+                    <p class="hindi">Semantic HTML matlab aisi tags use karna jinke naam se pata chale ki woh kya hai —
+                        jaise sirf <span class="code-pill">&lt;div&gt;</span> lagane ki jagah <span
+                            class="code-pill">&lt;header&gt;</span>, <span class="code-pill">&lt;nav&gt;</span>, <span
+                            class="code-pill">&lt;main&gt;</span>, <span class="code-pill">&lt;article&gt;</span>, <span
+                            class="code-pill">&lt;footer&gt;</span> use karo. Yeh browser aur screen readers dono ko
+                        samajh aata hai.</p>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-secondary);">
+                        Non-semantic vs Semantic — fark dekho</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                        <div
+                            style="background:var(--color-background-secondary);padding:12px;border-radius:var(--border-radius-md);border-left:3px solid #E24B4A;">
+                            <p style="font-size:12px;font-weight:500;margin:0 0 6px;color:#A32D2D;">Non-semantic</p>
+                            <code
+                                style="font-size:12px;color:var(--color-text-secondary);">&lt;div id="nav"&gt;<br>&lt;div id="header"&gt;<br>&lt;div class="footer"&gt;</code>
+                        </div>
+                        <div
+                            style="background:var(--color-background-secondary);padding:12px;border-radius:var(--border-radius-md);border-left:3px solid #1D9E75;">
+                            <p style="font-size:12px;font-weight:500;margin:0 0 6px;color:#0F6E56;">Semantic</p>
+                            <code
+                                style="font-size:12px;color:var(--color-text-secondary);">&lt;nav&gt;<br>&lt;header&gt;<br>&lt;footer&gt;</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="link-row">
+                    <a class="link-btn"
+                        href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> MDN — Semantic HTML</a>
+                    <a class="link-btn" href="https://web.dev/learn/html/semantic-html/" target="_blank"><i
+                            class="ti ti-external-link" aria-hidden="true"></i> web.dev — Semantic HTML</a>
+                    <a class="link-btn" href="https://www.w3schools.com/html/html5_semantic_elements.asp"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> W3Schools — Semantic
+                        Elements</a>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ACCESSIBILITY -->
+            <div class="section">
+                <div class="topic-header">
+                    <div class="topic-icon" style="background:#FAECE7;"><i class="ti ti-accessible"
+                            style="font-size:16px;color:#993C1D;" aria-hidden="true"></i></div>
+                    <h2 class="section-title">4. Accessibility (a11y)</h2>
+                    <span class="tag tag-coral">a11y</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">
+                        Definition</p>
+                    <p class="def"><strong>Accessibility</strong> means designing websites so that everyone — including
+                        people with disabilities — can use them effectively.</p>
+                    <p class="hindi">Accessibility matlab apni website ko sab ke liye useable banana — jinhe aankhon se
+                        dekhne mein takleef ho, keyboard se chalate ho, ya screen reader use karte ho. Yeh sirf "achi
+                        baat" nahi — kaafi jagah yeh legal requirement bhi hai.</p>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-secondary);">Key
+                        practices</p>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <span class="tag tag-coral" style="white-space:nowrap;margin:0;">alt text</span>
+                            <p style="font-size:13px;margin:0;color:var(--color-text-primary);">Images pe <span
+                                    class="code-pill">alt</span> attribute likho — screen reader padh ke sunaega.</p>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <span class="tag tag-coral" style="white-space:nowrap;margin:0;">&lt;label&gt;</span>
+                            <p style="font-size:13px;margin:0;color:var(--color-text-primary);">Har input ke saath ek
+                                <span class="code-pill">&lt;label&gt;</span> honi chahiye — bina label ke form confusing
+                                hota hai.
+                            </p>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <span class="tag tag-coral" style="white-space:nowrap;margin:0;">keyboard nav</span>
+                            <p style="font-size:13px;margin:0;color:var(--color-text-primary);">Poori site sirf keyboard
+                                se navigate ho sake — Tab, Enter, Arrow keys use karke.</p>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <span class="tag tag-coral" style="white-space:nowrap;margin:0;">color contrast</span>
+                            <p style="font-size:13px;margin:0;color:var(--color-text-primary);">Text aur background ke
+                                beech contrast zyada hona chahiye — WCAG standard: minimum 4.5:1 ratio.</p>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:flex-start;">
+                            <span class="tag tag-coral" style="white-space:nowrap;margin:0;">ARIA roles</span>
+                            <p style="font-size:13px;margin:0;color:var(--color-text-primary);"><span
+                                    class="code-pill">aria-label</span>, <span class="code-pill">role</span>, <span
+                                    class="code-pill">aria-describedby</span> — yeh screen readers ko extra context deta
+                                hai.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="link-row">
+                    <a class="link-btn" href="https://developer.mozilla.org/en-US/docs/Web/Accessibility"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> MDN — Accessibility</a>
+                    <a class="link-btn" href="https://web.dev/learn/accessibility/" target="_blank"><i
+                            class="ti ti-external-link" aria-hidden="true"></i> web.dev — Learn Accessibility</a>
+                    <a class="link-btn" href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank"><i
+                            class="ti ti-external-link" aria-hidden="true"></i> WCAG 2.2 Checklist</a>
+                    <a class="link-btn" href="https://www.a11yproject.com/" target="_blank"><i
+                            class="ti ti-external-link" aria-hidden="true"></i> The A11Y Project</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="form-advanced-section">
+        <h2 class="sr-only">Advanced HTML Forms, Validation, Semantic HTML aur Accessibility — interactive Hinglish
+            examples</h2>
+
+        <div class="wrap">
+
+            <!-- ===== SECTION 1: FORMS & INPUTS ===== -->
+            <div class="section">
+                <div class="sec-header">
+                    <div class="icon-box" style="background:#E6F1FB;"><i class="ti ti-forms"
+                            style="font-size:16px;color:#185FA5;" aria-hidden="true"></i></div>
+                    <h2 class="sec-title">1. Forms &amp; Inputs — Advanced</h2>
+                    <span class="tag t-blue">Live Demo</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">Advanced
+                        concept — controlled inputs + fieldset grouping</p>
+                    <p class="hindi">Sirf basic <span class="pill">&lt;input&gt;</span> nahi — professional forms mein
+                        <span class="pill">&lt;fieldset&gt;</span> se related fields group karte hain, <span
+                            class="pill">&lt;legend&gt;</span> se naam dete hain, aur har input ke saath <span
+                            class="pill">&lt;label for="id"&gt;</span> se link karte hain. Yeh screen readers ke liye
+                        bhi zaroori hai.
+                    </p>
+                    <div class="code-block">&lt;fieldset&gt;
+                        &lt;legend&gt;Personal Info&lt;/legend&gt;
+
+                        &lt;label for="fname"&gt;First Name&lt;/label&gt;
+                        &lt;input id="fname" type="text" name="fname"
+                        autocomplete="given-name" required&gt;
+
+                        &lt;label for="dob"&gt;Date of Birth&lt;/label&gt;
+                        &lt;input id="dob" type="date" name="dob"&gt;
+
+                        &lt;label for="role"&gt;Role&lt;/label&gt;
+                        &lt;select id="role" name="role"&gt;
+                        &lt;option value=""&gt;-- Select --&lt;/option&gt;
+                        &lt;option value="dev"&gt;Developer&lt;/option&gt;
+                        &lt;option value="des"&gt;Designer&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;/fieldset&gt;</div>
+                    <p class="hindi"><span class="tag t-blue">Key point</span> <span class="pill">autocomplete</span>
+                        attribute lagane se browser saved data suggest karta hai — user experience better hoti hai.
+                        <span class="pill">for</span> aur <span class="pill">id</span> match karna mandatory hai
+                        accessibility ke liye.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-secondary);">Try it —
+                        multi-type form</p>
+                    <div class="demo-box">
+                        <div class="demo-label">Live form demo</div>
+                        <div class="field-row">
+                            <label for="d-name">Full name</label>
+                            <input id="d-name" type="text" placeholder="Rahul Sharma" oninput="updateOutput()">
+                        </div>
+                        <div class="field-row">
+                            <label for="d-dob">Date of birth</label>
+                            <input id="d-dob" type="date" oninput="updateOutput()">
+                        </div>
+                        <div class="field-row">
+                            <label for="d-role">Role</label>
+                            <select id="d-role" onchange="updateOutput()">
+                                <option value="">-- Select --</option>
+                                <option value="Frontend Dev">Frontend Developer</option>
+                                <option value="Backend Dev">Backend Developer</option>
+                                <option value="Designer">UI/UX Designer</option>
+                                <option value="Student">Student</option>
+                            </select>
+                        </div>
+                        <div class="field-row">
+                            <label for="d-bio">Short bio</label>
+                            <textarea id="d-bio" rows="2" placeholder="Apne baare mein likho..."
+                                oninput="updateOutput()"></textarea>
+                        </div>
+                        <div class="output-box" id="form-output"
+                            style="color:var(--color-text-secondary);font-style:italic;">Kuch bhi type karo — yahan
+                            dikhega...</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== SECTION 2: VALIDATION ===== -->
+            <div class="section">
+                <div class="sec-header">
+                    <div class="icon-box" style="background:#EAF3DE;"><i class="ti ti-shield-check"
+                            style="font-size:16px;color:#3B6D11;" aria-hidden="true"></i></div>
+                    <h2 class="sec-title">2. Validation — Advanced</h2>
+                    <span class="tag t-teal">Real-time</span><span class="tag t-amber">Regex</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">Advanced
+                        concept — custom validation + regex pattern</p>
+                    <p class="hindi">HTML ka built-in <span class="pill">required</span> aur <span
+                            class="pill">type="email"</span> basic check karta hai. Advanced mein hum <span
+                            class="pill">pattern</span> attribute se custom regex lagate hain, aur JavaScript se
+                        real-time feedback dete hain. Password strength bhi JS se calculate hoti hai.</p>
+                    <div class="code-block">const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        const phoneRegex = /^[6-9]\d{9}$/;
+
+                        function validateEmail(val) {
+                        return emailRegex.test(val);
+                        }
+
+                        function validatePhone(val) {
+                        return phoneRegex.test(val);
+                        }
+
+                        function passwordStrength(pwd) {
+                        let score = 0;
+                        if (pwd.length >= 8) score++;
+                        if (/[A-Z]/.test(pwd)) score++;
+                        if (/[0-9]/.test(pwd)) score++;
+                        if (/[^A-Za-z0-9]/.test(pwd)) score++;
+                        return score;
+                        }</div>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-secondary);">Try it —
+                        live validation demo</p>
+                    <div class="demo-box">
+                        <div class="demo-label">Real-time validation</div>
+
+                        <div class="field-row">
+                            <label for="v-email">Email address</label>
+                            <input id="v-email" type="email" placeholder="rahul@example.com"
+                                oninput="validateEmailField()">
+                            <div class="err" id="email-err"><i class="ti ti-alert-circle" aria-hidden="true"></i> Valid
+                                email likho — jaise abc@gmail.com</div>
+                            <div class="ok" id="email-ok"><i class="ti ti-circle-check" aria-hidden="true"></i> Email
+                                sahi hai!</div>
+                        </div>
+
+                        <div class="field-row">
+                            <label for="v-phone">Indian mobile number</label>
+                            <input id="v-phone" type="tel" placeholder="9876543210" maxlength="10"
+                                oninput="validatePhoneField()">
+                            <div class="err" id="phone-err"><i class="ti ti-alert-circle" aria-hidden="true"></i> 10
+                                digit Indian number chahiye (6-9 se start)</div>
+                            <div class="ok" id="phone-ok"><i class="ti ti-circle-check" aria-hidden="true"></i> Number
+                                valid hai!</div>
+                        </div>
+
+                        <div class="field-row">
+                            <label for="v-pass">Password</label>
+                            <input id="v-pass" type="password" placeholder="Strong password banao"
+                                oninput="checkStrength()">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strength-fill" style="width:0%;background:#E24B4A;">
+                                </div>
+                            </div>
+                            <div style="font-size:12px;color:var(--color-text-secondary);margin-top:4px;"
+                                id="strength-label">Password type karo</div>
+                            <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:3px;">Tip: Uppercase
+                                + number + special char (@#$) = strong</div>
+                        </div>
+
+                        <div class="field-row" style="margin-bottom:0;">
+                            <label for="v-confirm">Confirm password</label>
+                            <input id="v-confirm" type="password" placeholder="Dobara likho" oninput="checkMatch()">
+                            <div class="err" id="match-err"><i class="ti ti-alert-circle" aria-hidden="true"></i>
+                                Passwords match nahi kar rahe!</div>
+                            <div class="ok" id="match-ok"><i class="ti ti-circle-check" aria-hidden="true"></i>
+                                Passwords match!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== SECTION 3: SEMANTIC HTML ===== -->
+            <div class="section">
+                <div class="sec-header">
+                    <div class="icon-box" style="background:#EEEDFE;"><i class="ti ti-layout"
+                            style="font-size:16px;color:#534AB7;" aria-hidden="true"></i></div>
+                    <h2 class="sec-title">3. Semantic HTML — Advanced</h2>
+                    <span class="tag t-purple">Structure</span><span class="tag t-blue">SEO</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">Advanced
+                        concept — full page structure</p>
+                    <p class="hindi">Ek real website ki structure semantic tags se kaise banate hain — yeh dekho. <span
+                            class="pill">&lt;article&gt;</span> ke andar <span class="pill">&lt;header&gt;</span>, <span
+                            class="pill">&lt;section&gt;</span>, <span class="pill">&lt;aside&gt;</span>, <span
+                            class="pill">&lt;figure&gt;</span> — sab ka apna matlab hai. Search engines aur screen
+                        readers dono isse love karte hain.</p>
+                    <div class="code-block">&lt;body&gt;
+                        &lt;header&gt;
+                        &lt;nav aria-label="Main navigation"&gt;
+                        &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="/home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;/nav&gt;
+                        &lt;/header&gt;
+
+                        &lt;main&gt;
+                        &lt;article&gt;
+                        &lt;header&gt;
+                        &lt;h1&gt;Blog Post Title&lt;/h1&gt;
+                        &lt;time datetime="2024-06-13"&gt;June 13, 2024&lt;/time&gt;
+                        &lt;/header&gt;
+
+                        &lt;section&gt;
+                        &lt;h2&gt;Introduction&lt;/h2&gt;
+                        &lt;p&gt;Content here...&lt;/p&gt;
+                        &lt;/section&gt;
+
+                        &lt;figure&gt;
+                        &lt;img src="chart.png" alt="Sales chart 2024"&gt;
+                        &lt;figcaption&gt;Q2 Sales Data&lt;/figcaption&gt;
+                        &lt;/figure&gt;
+                        &lt;/article&gt;
+
+                        &lt;aside&gt;
+                        &lt;h2&gt;Related articles&lt;/h2&gt;
+                        &lt;/aside&gt;
+                        &lt;/main&gt;
+
+                        &lt;footer&gt;
+                        &lt;address&gt;contact@example.com&lt;/address&gt;
+                        &lt;/footer&gt;
+                        &lt;/body&gt;</div>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-secondary);">Tag ka
+                        matlab — quick reference</p>
+                    <div id="sem-list">
+                        <div class="result-row"><span class="pill">&lt;main&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Page ka primary content — ek hi
+                                hota hai</span></div>
+                        <div class="result-row"><span class="pill">&lt;article&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Standalone content — blog post,
+                                news item</span></div>
+                        <div class="result-row"><span class="pill">&lt;section&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Thematic group — heading hona
+                                chahiye</span></div>
+                        <div class="result-row"><span class="pill">&lt;aside&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Sidebar ya related info</span>
+                        </div>
+                        <div class="result-row"><span class="pill">&lt;figure&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Image/chart + optional
+                                caption</span></div>
+                        <div class="result-row"><span class="pill">&lt;time&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Date/time — datetime attribute
+                                machine-readable</span></div>
+                        <div class="result-row"><span class="pill">&lt;address&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Contact info for nearest
+                                article/body</span></div>
+                        <div class="result-row"><span class="pill">&lt;mark&gt;</span><span
+                                style="font-size:13px;color:var(--color-text-primary);">Highlighted/relevant text</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== SECTION 4: ACCESSIBILITY ===== -->
+            <div class="section">
+                <div class="sec-header">
+                    <div class="icon-box" style="background:#FAECE7;"><i class="ti ti-accessible"
+                            style="font-size:16px;color:#993C1D;" aria-hidden="true"></i></div>
+                    <h2 class="sec-title">4. Accessibility — Advanced</h2>
+                    <span class="tag t-coral">ARIA</span><span class="tag t-coral">WCAG 2.2</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 4px;color:var(--color-text-secondary);">Advanced
+                        concept — ARIA roles aur live regions</p>
+                    <p class="hindi">ARIA (Accessible Rich Internet Applications) attributes screen readers ko extra
+                        context dete hain. <span class="pill">aria-live</span> ek powerful feature hai — jab page pe
+                        dynamically content change ho (jaise form validation message), toh screen reader automatically
+                        padh leta hai bina page reload ke.</p>
+                    <div class="code-block"><!-- Screen-reader only text -->
+                        &lt;span class="sr-only"&gt;Error: Email required&lt;/span&gt;
+
+                        <!-- Live region — dynamic changes announce honge -->
+                        &lt;div aria-live="polite" aria-atomic="true" id="status"&gt;
+                        Form successfully submitted!
+                        &lt;/div&gt;
+
+                        <!-- Button with icon only — accessible label -->
+                        &lt;button aria-label="Close dialog"&gt;
+                        &lt;svg aria-hidden="true"&gt;...&lt;/svg&gt;
+                        &lt;/button&gt;
+
+                        <!-- Input with error linked via aria-describedby -->
+                        &lt;input
+                        id="email"
+                        type="email"
+                        aria-required="true"
+                        aria-invalid="true"
+                        aria-describedby="email-error"
+                        &gt;
+                        &lt;span id="email-error" role="alert"&gt;
+                        Valid email enter karein
+                        &lt;/span&gt;
+                    </div>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-secondary);">WCAG 2.2
+                        checklist — form ke liye</p>
+                    <div id="a11y-checks">
+                        <div class="result-row">
+                            <span style="font-size:13px;">Har <span class="pill">&lt;input&gt;</span> ke saath <span
+                                    class="pill">&lt;label&gt;</span> linked hai</span>
+                            <span class="badge badge-success"><i class="ti ti-check" aria-hidden="true"></i>
+                                Required</span>
+                        </div>
+                        <div class="result-row">
+                            <span style="font-size:13px;">Error messages <span class="pill">role="alert"</span> ya <span
+                                    class="pill">aria-live</span> se announce hote hain</span>
+                            <span class="badge badge-success"><i class="ti ti-check" aria-hidden="true"></i>
+                                Required</span>
+                        </div>
+                        <div class="result-row">
+                            <span style="font-size:13px;">Focus visible hona chahiye — Tab karne pe clearly dikhna
+                                chahiye</span>
+                            <span class="badge badge-success"><i class="ti ti-check" aria-hidden="true"></i>
+                                Required</span>
+                        </div>
+                        <div class="result-row">
+                            <span style="font-size:13px;">Color se sirf meaning mat do — icon ya text bhi use
+                                karo</span>
+                            <span class="badge badge-warn"><i class="ti ti-alert-triangle" aria-hidden="true"></i>
+                                Common mistake</span>
+                        </div>
+                        <div class="result-row">
+                            <span style="font-size:13px;">Text contrast ratio 4.5:1 minimum (normal text)</span>
+                            <span class="badge badge-success"><i class="ti ti-check" aria-hidden="true"></i> AA
+                                Level</span>
+                        </div>
+                        <div class="result-row">
+                            <span style="font-size:13px;">Form submit ke baad success/error clearly batao</span>
+                            <span class="badge badge-success"><i class="ti ti-check" aria-hidden="true"></i>
+                                Required</span>
+                        </div>
+                        <div class="result-row">
+                            <span style="font-size:13px;">Touch targets min 44×44px hone chahiye (mobile)</span>
+                            <span class="badge badge-warn"><i class="ti ti-alert-triangle" aria-hidden="true"></i> Often
+                                missed</span>
+                        </div>
+                    </div>
+
+                    <div class="aria-demo" style="margin-top:14px;">
+                        <p style="font-size:12px;font-weight:500;margin:0 0 4px;color:#185FA5;">Screen reader
+                            announcement — yeh live region hai</p>
+                        <button onclick="triggerAria()" style="font-size:13px;margin-bottom:8px;">Simulate form submit
+                            ↗</button>
+                        <div id="aria-live-box" aria-live="polite" aria-atomic="true"
+                            style="font-size:13px;color:var(--color-text-secondary);min-height:20px;">Button dabao —
+                            screen reader yahan announce karega...</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="CSS Fundamentals">
+        <h2 class="sr-only">CSS Fundamentals — interactive Hinglish examples</h2>
+
+
+        <h2 class="sr-only">CSS Fundamentals aur common interview questions — Hinglish explanations ke saath</h2>
+
+        <div class="wrap">
+
+            <!-- ===== 1. BOX MODEL ===== -->
+            <div class="sec">
+                <div class="sec-head">
+                    <div class="ibox" style="background:#FAEEDA;"><i class="ti ti-box"
+                            style="font-size:16px;color:#854F0B;" aria-hidden="true"></i></div>
+                    <span class="sec-title">1. Box Model</span>
+                    <span class="tag ta">Fundamental</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px;">
+                        Definition</p>
+                    <p class="def">Every element is a rectangular box made of <strong>content, padding, border, and
+                            margin</strong>.</p>
+                    <p class="hint">Har HTML element ek box hota hai — andar se bahar tak 4 layers: <span
+                            class="pill">content</span> (asli data), <span class="pill">padding</span> (content ke
+                        around space), <span class="pill">border</span> (boundary line), aur <span
+                            class="pill">margin</span> (outside space, doosre elements se gap).</p>
+                    <div style="margin-top:12px;">
+                        <div class="bm-margin">
+                            <span class="bm-label" style="top:4px;left:8px;">margin</span>
+                            <div class="bm-border" style="margin-top:14px;">
+                                <span class="bm-label" style="top:4px;left:8px;color:#AD6E0C;">border</span>
+                                <div class="bm-padding" style="margin-top:14px;">
+                                    <span class="bm-label" style="top:4px;left:8px;color:#0F6E56;">padding</span>
+                                    <div class="bm-content" style="margin-top:14px;">content</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px;"><span
+                            class="pill">box-sizing</span> — interview favourite</p>
+                    <div class="cb">/* default — width sirf content ka hota hai
+                        padding + border alag se add hoti hai */
+                        box-sizing: content-box;
+
+                        /* width mein padding + border bhi included
+                        — total size predictable rehta hai */
+                        box-sizing: border-box;</div>
+                    <p class="hint" style="margin-bottom:0;"><span class="tag tt">Pro tip</span> Real projects mein
+                        hamesha <span class="pill">* { box-sizing: border-box; }</span> use karte hain — taaki
+                        padding/border add karne se layout na tute.</p>
+                </div>
+
+                <div class="link-row">
+                    <a class="link-btn"
+                        href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> MDN — Box Model</a>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== 2. SELECTORS & SPECIFICITY ===== -->
+            <div class="sec">
+                <div class="sec-head">
+                    <div class="ibox" style="background:#EEEDFE;"><i class="ti ti-target"
+                            style="font-size:16px;color:#534AB7;" aria-hidden="true"></i></div>
+                    <span class="sec-title">2. Selectors &amp; Specificity</span>
+                    <span class="tag tp">Cascade</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px;">
+                        Definition</p>
+                    <p class="def"><strong>Specificity</strong> decides which CSS rule "wins" when multiple rules target
+                        the same element.</p>
+                    <p class="hint">Jab same element pe ek se zyada CSS rules apply ho rahe hote hain, browser decide
+                        karta hai konsa rule jeetega — based on selector ki "specificity score". Higher score wala rule
+                        apply hota hai.</p>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;">
+                        Specificity hierarchy — kam se zyada powerful</p>
+                    <div class="row"><span><span class="pill">element</span> / <span
+                                class="pill">::pseudo-element</span></span><span class="desc">e.g. <span
+                                class="pill">p</span>, <span class="pill">div</span> — lowest priority</span></div>
+                    <div class="row"><span><span class="pill">.class</span> / <span class="pill">[attr]</span> / <span
+                                class="pill">:pseudo-class</span></span><span class="desc">e.g. <span
+                                class="pill">.btn</span>, <span class="pill">:hover</span></span></div>
+                    <div class="row"><span><span class="pill">#id</span></span><span class="desc">ID selector — class se
+                            zyada powerful</span></div>
+                    <div class="row"><span><span class="pill">inline style</span></span><span class="desc">e.g. <span
+                                class="pill">style="color:red"</span> — sabse zyada</span></div>
+                    <div class="row"><span><span class="pill">!important</span></span><span class="desc">Sab kuch
+                            override karta hai — sparingly use karo</span></div>
+                    <p class="hint" style="margin-top:8px;margin-bottom:0;"><span class="tag tr">Interview tip</span>
+                        <span class="pill">!important</span> ko "escape hatch" samjho — agar har jagah use karo, toh
+                        debugging nightmare ban jata hai.</p>
+                </div>
+
+                <div class="link-row">
+                    <a class="link-btn" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> MDN — Specificity</a>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== 3. DISPLAY & POSITION ===== -->
+            <div class="sec">
+                <div class="sec-head">
+                    <div class="ibox" style="background:#E6F1FB;"><i class="ti ti-layout-grid"
+                            style="font-size:16px;color:#185FA5;" aria-hidden="true"></i></div>
+                    <span class="sec-title">3. Display &amp; Position</span>
+                    <span class="tag tb">Layout</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px;">
+                        Definition</p>
+                    <p class="def"><strong>display</strong> controls how an element is rendered as a box;
+                        <strong>position</strong> controls where it sits relative to other elements.</p>
+                    <p class="hint">Display batata hai element "kaisa" box hai — line mein hai ya apni line pe. Position
+                        batata hai woh "kahan" hai — normal flow mein ya specific jagah pe.</p>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;"><span
+                            class="pill">display</span> values</p>
+                    <div class="row"><span><span class="pill">block</span></span><span class="desc">Full width leta hai,
+                            apni line — <span class="pill">&lt;div&gt;</span>, <span
+                                class="pill">&lt;p&gt;</span></span></div>
+                    <div class="row"><span><span class="pill">inline</span></span><span class="desc">Sirf jitni jagah
+                            chahiye, line mein — <span class="pill">&lt;span&gt;</span>, <span
+                                class="pill">&lt;a&gt;</span></span></div>
+                    <div class="row"><span><span class="pill">inline-block</span></span><span class="desc">Inline jaisa
+                            flow, par width/height set kar sakte ho</span></div>
+                    <div class="row"><span><span class="pill">none</span></span><span class="desc">Element hide — DOM se
+                            bhi gayab, jagah nahi leta</span></div>
+                    <div class="row"><span><span class="pill">flex</span> / <span class="pill">grid</span></span><span
+                            class="desc">Children ko layout karne ka modern tarika</span></div>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;"><span
+                            class="pill">position</span> values</p>
+                    <div class="row"><span><span class="pill">static</span></span><span class="desc">Default — normal
+                            document flow mein</span></div>
+                    <div class="row"><span><span class="pill">relative</span></span><span class="desc">Apni normal jagah
+                            se shift hota hai, jagah reserve rehti hai</span></div>
+                    <div class="row"><span><span class="pill">absolute</span></span><span class="desc">Nearest
+                            positioned parent ke relative — flow se bahar</span></div>
+                    <div class="row"><span><span class="pill">fixed</span></span><span class="desc">Viewport ke relative
+                            — scroll karne pe bhi waheen rehta hai</span></div>
+                    <div class="row"><span><span class="pill">sticky</span></span><span class="desc">Scroll tak normal,
+                            ek point pe "stick" ho jata hai</span></div>
+                    <p class="hint" style="margin-top:8px;margin-bottom:0;"><span class="tag tt">Interview
+                            classic</span> "<span class="pill">visibility: hidden</span> vs <span class="pill">display:
+                            none</span>?" — hidden wala jagah reserve karta hai (invisible but space leta hai),
+                        display:none jagah bhi nahi leta.</p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== 4. FLEXBOX vs GRID ===== -->
+            <div class="sec">
+                <div class="sec-head">
+                    <div class="ibox" style="background:#E1F5EE;"><i class="ti ti-layout-distribute-horizontal"
+                            style="font-size:16px;color:#0F6E56;" aria-hidden="true"></i></div>
+                    <span class="sec-title">4. Flexbox vs Grid</span>
+                    <span class="tag tt">Modern layout</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px;">
+                        Definition</p>
+                    <p class="def"><strong>Flexbox</strong> arranges items in a single direction (row or column);
+                        <strong>Grid</strong> arranges items in rows and columns simultaneously.</p>
+                    <p class="hint">Flexbox <strong>1D</strong> hai — ek time pe ya toh row ya column. Grid
+                        <strong>2D</strong> hai — rows aur columns dono ek saath control karta hai. Navbar, button group
+                        → flexbox. Pura page layout, photo gallery → grid.</p>
+                </div>
+
+                <div class="card">
+                    <div class="cb">/* Flexbox — items ek row mein, equal space */
+                        .container {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 16px;
+                        }
+
+                        /* Grid — 3 equal columns */
+                        .container {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 16px;
+                        }</div>
+                </div>
+
+                <div class="link-row">
+                    <a class="link-btn" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> CSS-Tricks — Flexbox
+                        Guide</a>
+                    <a class="link-btn" href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+                        target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i> CSS-Tricks — Grid
+                        Guide</a>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== 5. UNITS ===== -->
+            <div class="sec">
+                <div class="sec-head">
+                    <div class="ibox" style="background:#FAECE7;"><i class="ti ti-ruler-2"
+                            style="font-size:16px;color:#993C1D;" aria-hidden="true"></i></div>
+                    <span class="sec-title">5. CSS Units</span>
+                    <span class="tag tc">px, em, rem, %</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px;">
+                        Definition</p>
+                    <p class="def">Units determine how a size value is calculated — fixed (absolute) or relative to
+                        something else.</p>
+                    <div class="row"><span><span class="pill">px</span></span><span class="desc">Fixed pixel — kabhi
+                            change nahi hota</span></div>
+                    <div class="row"><span><span class="pill">%</span></span><span class="desc">Parent element ke size
+                            ka percentage</span></div>
+                    <div class="row"><span><span class="pill">em</span></span><span class="desc">Parent ke font-size ka
+                            multiple (nested ho toh compound hota hai)</span></div>
+                    <div class="row"><span><span class="pill">rem</span></span><span class="desc">Root (<span
+                                class="pill">&lt;html&gt;</span>) ke font-size ka multiple — consistent</span></div>
+                    <div class="row"><span><span class="pill">vh</span> / <span class="pill">vw</span></span><span
+                            class="desc">Viewport height/width ka percentage</span></div>
+                    <p class="hint" style="margin-top:8px;margin-bottom:0;"><span class="tag tc">Interview
+                            classic</span> "em vs rem?" — em parent pe depend karta hai (nesting mein unpredictable),
+                        rem hamesha root pe based hai (predictable). Isliye font sizing mein <span
+                            class="pill">rem</span> prefer kiya jata hai.</p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== 6. PSEUDO-CLASSES & ELEMENTS ===== -->
+            <div class="sec">
+                <div class="sec-head">
+                    <div class="ibox" style="background:#EAF3DE;"><i class="ti ti-asterisk"
+                            style="font-size:16px;color:#3B6D11;" aria-hidden="true"></i></div>
+                    <span class="sec-title">6. Pseudo-classes &amp; Pseudo-elements</span>
+                    <span class="tag tg">:hover, ::before</span>
+                </div>
+
+                <div class="card">
+                    <p style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:4px;">
+                        Definition</p>
+                    <p class="def"><strong>Pseudo-class</strong> (single colon) targets an element's state;
+                        <strong>pseudo-element</strong> (double colon) targets a sub-part that doesn't exist in the DOM.
+                    </p>
+                    <p class="hint">Pseudo-class — element ki <em>state</em> ya position based pe style — jaise hover ho
+                        rahe ho, ya nth child hai. Pseudo-element — naya "virtual" content/part create karta hai jo HTML
+                        mein likha nahi hai.</p>
+                    <div class="cb">/* Pseudo-classes — single colon */
+                        a:hover { color: blue; }
+                        li:nth-child(2) { font-weight: bold; }
+                        input:focus { border-color: green; }
+                        input:disabled { opacity: 0.5; }
+
+                        /* Pseudo-elements — double colon */
+                        p::first-line { font-weight: bold; }
+                        .box::before { content: "→ "; }
+                        .box::after { content: ""; display: block; }</div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ===== INTERVIEW QUESTIONS ===== -->
+            <div class="sec">
+                <div class="sec-head">
+                    <div class="ibox" style="background:#FCEBEB;"><i class="ti ti-message-question"
+                            style="font-size:16px;color:#B23A3A;" aria-hidden="true"></i></div>
+                    <span class="sec-title">Top Interview Questions — click to expand</span>
+                    <span class="tag tr">Q&amp;A</span>
+                </div>
+
+                <details>
+                    <summary>1. Difference between <span class="pill">em</span> and <span class="pill">rem</span>?
+                    </summary>
+                    <p><span class="pill">em</span> apne immediate parent ke font-size se calculate hota hai — nested
+                        elements mein compound (multiply) ho jata hai. <span class="pill">rem</span> hamesha <span
+                            class="pill">&lt;html&gt;</span> root element ke font-size se calculate hota hai — isliye
+                        predictable rehta hai.</p>
+                </details>
+
+                <details>
+                    <summary>2. <span class="pill">visibility: hidden</span> vs <span class="pill">display: none</span>?
+                    </summary>
+                    <p><span class="pill">display: none</span> element ko completely render tree se hata deta hai — koi
+                        space nahi leta, screen reader bhi skip karta hai. <span class="pill">visibility: hidden</span>
+                        element ko invisible kar deta hai par uski jagah (layout space) reserve rehti hai.</p>
+                </details>
+
+                <details>
+                    <summary>3. What is the CSS Box Model?</summary>
+                    <p>Har element ek box hota hai jisme content, padding, border, aur margin layers hoti hain — andar
+                        se bahar. <span class="pill">box-sizing: border-box</span> se width calculation predictable
+                        banayi ja sakti hai.</p>
+                </details>
+
+                <details>
+                    <summary>4. <span class="pill">position: relative</span> vs <span class="pill">absolute</span>?
+                    </summary>
+                    <p><span class="pill">relative</span> element apni original jagah se offset hota hai, par uski jagah
+                        document flow mein reserve rehti hai. <span class="pill">absolute</span> element document flow
+                        se completely bahar nikal jata hai aur nearest positioned ancestor (jiska position static na ho)
+                        ke relative position hota hai.</p>
+                </details>
+
+                <details>
+                    <summary>5. What is specificity, and how is it calculated?</summary>
+                    <p>Specificity decide karti hai konsa CSS rule apply hoga jab multiple rules clash karein. Order
+                        (low to high): element selectors → class/attribute/pseudo-class → ID → inline styles → <span
+                            class="pill">!important</span>. Zyada specific selector jeet jaata hai.</p>
+                </details>
+
+                <details>
+                    <summary>6. Flexbox vs Grid — kab kya use karein?</summary>
+                    <p>Flexbox 1-dimensional layout ke liye best hai (single row/column) — navbars, button groups,
+                        centering content. Grid 2-dimensional layout ke liye — full page structure, image galleries,
+                        dashboards jahan rows aur columns dono control karna ho.</p>
+                </details>
+
+                <details>
+                    <summary>7. What is a stacking context and <span class="pill">z-index</span>?</summary>
+                    <p><span class="pill">z-index</span> decide karta hai kaunsa element upar dikhega jab elements
+                        overlap karte hain — higher value upar. Yeh sirf positioned elements (relative, absolute, fixed,
+                        sticky) pe kaam karta hai. Stacking context naya tab banta hai jab koi element <span
+                            class="pill">position</span> + <span class="pill">z-index</span>, ya <span
+                            class="pill">opacity &lt; 1</span>, ya <span class="pill">transform</span> jaisi properties
+                        use karta hai — uske andar ke z-index sirf usi context mein compare hote hain.</p>
+                </details>
+
+                <details>
+                    <summary>8. What is the difference between <span class="pill">inline</span>, <span
+                            class="pill">inline-block</span>, and <span class="pill">block</span>?</summary>
+                    <p><span class="pill">block</span> apni full line leta hai aur width/height set ho sakti hai. <span
+                            class="pill">inline</span> sirf content jitni jagah leta hai, width/height set nahi hoti,
+                        aur line mein doosre elements ke saath flow karta hai. <span class="pill">inline-block</span>
+                        dono ka mix — line mein flow karta hai par width/height set kar sakte ho.</p>
+                </details>
+
+                <details>
+                    <summary>9. What is the CSS cascade, and how does it work with inheritance?</summary>
+                    <p>Cascade woh algorithm hai jisse browser decide karta hai conflicting styles mein kaunsa apply
+                        hoga — origin (browser/user/author), specificity, aur source order (later rule jeet jaata hai
+                        agar specificity same ho) ke basis pe. Inheritance alag concept hai — kuch properties (jaise
+                        <span class="pill">color</span>, <span class="pill">font-family</span>) child elements ko parent
+                        se automatically mil jaati hain, jab tak override na kiya jaye.</p>
+                </details>
+
+                <details>
+                    <summary>10. What is a media query, and why is it important?</summary>
+                    <p><span class="pill">@media</span> query se hum screen size, orientation, ya device type ke basis
+                        pe different CSS apply kar sakte hain — responsive design ka foundation. e.g. <span
+                            class="pill">@media (max-width: 768px) { ... }</span> — mobile screens ke liye alag styles.
+                    </p>
+                </details>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

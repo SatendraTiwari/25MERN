@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML-only Form Validation</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 0 16px;
+      color: #1a1a1a;
+    }
+    h1 { font-size: 20px; }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin: 16px 0 4px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    small {
+      color: #666;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* ===== Pure CSS validation styling ===== */
+    /* :not(:placeholder-shown) ensures colors only show
+       AFTER the user has typed something (not on page load) */
+    input:not(:placeholder-shown):valid,
+    textarea:not(:placeholder-shown):valid {
+      border-color: #2e7d32;
+      box-shadow: 0 0 0 1px #2e7d32;
+    }
+    input:not(:placeholder-shown):invalid,
+    textarea:not(:placeholder-shown):invalid {
+      border-color: #c62828;
+      box-shadow: 0 0 0 1px #c62828;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      background: #1a1a1a;
+      color: #fff;
+      cursor: pointer;
+    }
+    #status { margin-top: 12px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <h1>Registration form — HTML-only validation</h1>
+
+  <form id="myForm">
+
+    <label for="name">Full name</label>
+    <input
+      id="name"
+      type="text"
+      required
+      minlength="3"
+      maxlength="30"
+      placeholder="Apna naam likho"
+    >
+
+    <!-- type="email": browser @ aur domain format check karta hai -->
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      required
+      placeholder="abc@example.com"
+    >
+
+    <!-- pattern: custom regex. title: error tooltip mein dikhega -->
+    <label for="phone">Mobile number</label>
+    <input
+      id="phone"
+      type="tel"
+      required
+      pattern="[6-9][0-9]{9}"
+      title="10 digit number, 6-9 se start hona chahiye"
+      placeholder="9876543210"
+    >
+    <small>Pattern: [6-9][0-9]{9} — Indian mobile format</small>
+
+    <!-- type="number" + min/max: range check -->
+    <label for="age">Age</label>
+    <input
+      id="age"
+      type="number"
+      required
+      min="18"
+      max="60"
+      placeholder="25"
+    >
+
+    <!-- pattern for 6-digit PIN code -->
+    <label for="pincode">PIN code</label>
+    <input
+      id="pincode"
+      type="text"
+      required
+      pattern="[0-9]{6}"
+      maxlength="6"
+      title="6 digit pincode chahiye"
+      placeholder="452001"
+    >
+
+    <!-- pattern with lookahead: min 8 chars + at least 1 number -->
+    <label for="password">Password</label>
+    <input
+      id="password"
+      type="password"
+      required
+      minlength="8"
+      pattern="(?=.*[0-9]).{8,}"
+      title="Kam se kam 8 characters aur ek number hona chahiye"
+      placeholder="Min 8 chars + 1 number"
+    >
+
+    <!-- type="url": valid URL format chahiye, optional field (no required) -->
+    <label for="portfolio">Portfolio URL (optional)</label>
+    <input
+      id="portfolio"
+      type="url"
+      placeholder="https://example.com"
+    >
+
+    <!-- textarea with maxlength -->
+    <label for="bio">Short bio</label>
+    <textarea
+      id="bio"
+      rows="3"
+      required
+      maxlength="100"
+      placeholder="Apne baare mein likho (max 100 chars)"
+    ></textarea>
+
+    <!-- checkbox with required -->
+    <label style="display:flex; align-items:center; gap:8px; font-weight:400;">
+      <input type="checkbox" required style="width:auto;">
+      Terms and conditions accept karta/karti hoon
+    </label>
+
+    <button type="submit">Submit</button>
+    <div id="status"></div>
+  </form>
+
+  <script>
+    // Yeh JS sirf "success" message dikhane ke liye hai —
+    // validation ka kaam pura HTML attributes hi kar rahe hain.
+    document.getElementById('myForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('status').textContent = 'Form valid hai — submitted!';
+      document.getElementById('status').style.color = '#2e7d32';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+     <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 0 16px;
+      color: #1a1a1a;
+    }
+    h1 { font-size: 20px; }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin: 16px 0 4px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    small {
+      color: #666;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* ===== Pure CSS validation styling ===== */
+    /* :not(:placeholder-shown) ensures colors only show
+       AFTER the user has typed something (not on page load) */
+    input:not(:placeholder-shown):valid,
+    textarea:not(:placeholder-shown):valid {
+      border-color: #2e7d32;
+      box-shadow: 0 0 0 1px #2e7d32;
+    }
+    input:not(:placeholder-shown):invalid,
+    textarea:not(:placeholder-shown):invalid {
+      border-color: #c62828;
+      box-shadow: 0 0 0 1px #c62828;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      background: #1a1a1a;
+      color: #fff;
+      cursor: pointer;
+    }
+    #status { margin-top: 12px; font-size: 14px; }
+  </style>
+</head>
+
+<body>
+
+    <form action="index.html" method = "post">
+        <label for="name" >Full Name</label>
+        <input
+            type = "text"
+            id = "name"
+            minLength = "3"
+            maxLength = "30"
+            required
+        >
+        <label for = "email">Email</label>
+        <input
+            type = "email"
+            id = "email"
+            minLength = "3"
+            pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            required
+        >
+
+        <label for = "password">Password</label>
+        <input
+            type = "password"
+            id = "password"
+            minLength = "8"
+            pattern = "(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+            required
+        >
+        <small>Password must contain at least 8 characters, including uppercase, lowercase, number and special character.</small>
+
+        <button type = "submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
